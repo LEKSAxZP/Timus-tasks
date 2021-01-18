@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Glavna {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int br1 = input.nextInt();
+        int sum = 0;
+
+            if(br1>0){
+                for (int i = 1; i <= br1; i++) {
+                    sum+=i;
+                }
+                System.out.println(sum);
+            }
+            else{
+                for (int i = 1; i >= br1; i--) {
+                    sum+=i;
+                }
+                System.out.println(sum);
+            }
+    }
+}
