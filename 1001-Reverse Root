@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Glavna {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        List<Long> brojevi = new ArrayList();
+
+        while (input.hasNextLong()){
+            brojevi.add(input.nextLong());
+        }
+
+        for (int i = brojevi.size()-1; i >= 0 ; i--) {
+            System.out.printf("%.4f%n",Math.sqrt(brojevi.get(i)));
+        }
+    }
+}
