@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class Glavna {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int br1 = input.nextInt();
+        int br2 = input.nextInt();
+
+        System.out.println(br1+br2);
+    }
+}
