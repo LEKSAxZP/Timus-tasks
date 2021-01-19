@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Glavna {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int broj = input.nextInt();
+        int ispis = 1;
+        String uzvicnici = "";
+
+
+        if(broj < 1 || broj > 10){}
+        else{
+            uzvicnici = input.nextLine().trim();
+
+            int brojUzvicnika = 0;
+            for (int i = 0; i < 20; i++) {
+                if(i >= uzvicnici.length()) break;
+                if(uzvicnici.charAt(i) == '!'){
+                    brojUzvicnika++;
+                }
+                else break;
+            }
+            if(brojUzvicnika >= broj){
+                System.out.println(broj);
+            }
+            else if(brojUzvicnika == 0){}
+            else {
+                while (broj>=1){
+                    ispis *= broj;
+                    broj -= brojUzvicnika;
+                }
+                System.out.println(ispis);
+            }
+
+        }
+    }
+}
