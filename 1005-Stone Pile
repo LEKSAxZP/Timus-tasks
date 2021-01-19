@@ -1,0 +1,44 @@
+import java.util.*;
+
+
+
+public class Glavna {
+    public static int brKamenja = 0;
+    public static int suma1 = 0;
+    public static int suma2 = 0;
+    public static int razlika = Integer.MAX_VALUE;
+    public static int grupaKamenja[] = new int[20];
+
+
+    public static void minimalnaVrednost(int broj) {
+
+        if (broj == brKamenja) {
+            if (Math.abs(suma1 - suma2) < razlika) {
+                razlika = Math.abs(suma1 - suma2);
+            }
+        } else {
+            suma1 += grupaKamenja[broj];
+            minimalnaVrednost(broj + 1);
+            suma1 -= grupaKamenja[broj];
+            suma2 += grupaKamenja[broj];
+            minimalnaVrednost(broj + 1);
+            suma2 -= grupaKamenja[broj];
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        brKamenja = sc.nextInt();
+        for (int i = 0; i < brKamenja; i++) {
+            grupaKamenja[i] = sc.nextInt();
+        }
+
+        minimalnaVrednost(0);
+
+        System.out.println(razlika);
+
+    }
+}
